@@ -17,7 +17,10 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { TopMenuComponent } from './top-menu/top-menu.component';
-import { from } from 'rxjs';
+import 'rxjs';
+import { SearchPageComponent } from './search-page/search-page.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -25,7 +28,8 @@ import { from } from 'rxjs';
     AppComponent,
     HomeComponent,
     AboutComponent,
-    TopMenuComponent
+    TopMenuComponent,
+    SearchPageComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,9 @@ import { from } from 'rxjs';
     MatProgressSpinnerModule,
     MatSelectModule,
     MatSortModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule,
+    HttpModule
 
   ],
   providers: [],

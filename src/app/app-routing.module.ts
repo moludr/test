@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { SearchPageComponent } from './search-page/search-page.component';
 import { AboutComponent } from './about/about.component';
 import { from } from 'rxjs';
 
 const routes: Routes = [
   {
     path: "",
-    component: HomeComponent
+    component: SearchPageComponent
   },
-  {
-    path: 'about',
-    component: AboutComponent
-  }
+  // {
+  //   path: 'about',
+  //   component: AboutComponent
+  // }
 ];
 
 @NgModule({

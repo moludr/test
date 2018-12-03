@@ -1,0 +1,23 @@
+/* Structure */
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+
+.dropdown{
+    padding: 0px 10px;
+    max-width: 0px;
+}
+.search{
+    padding: 9px 10px 5px 10px;
+    max-width: 100px;
+}
+.matHeaderCell{
+    font-size: x-large;
+    color: black;
+}

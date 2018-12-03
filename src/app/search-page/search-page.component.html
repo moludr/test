@@ -1,0 +1,59 @@
+<table>
+  <tr>
+    <td class="dropdown">
+      <!-- <h4>Basic mat-select</h4> -->
+      <mat-form-field>
+        <mat-select placeholder="Select City" (selectionChange)="onChange($event.value)">
+          <mat-option *ngFor="
+          let city of citys" [value]="city.value">
+            {{city.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+    <td class="search" *ngIf='selectedCity'>
+      <mat-form-field>
+
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+    </td>
+  </tr>
+
+
+</table>
+
+
+<table *ngIf="selectedCity " mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="bank_name">
+    <th mat-header-cell *matHeaderCellDef class="matHeaderCell"> Bank name </th>
+    <td mat-cell *matCellDef="let element"> {{element.bank_name}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="bank_id">
+    <th mat-header-cell *matHeaderCellDef class="matHeaderCell"> Bank Id </th>
+    <td mat-cell *matCellDef="let element"> {{element.bank_id}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="ifsc">
+    <th mat-header-cell *matHeaderCellDef class="matHeaderCell"> IFSC </th>
+    <td mat-cell *matCellDef="let element"> {{element.ifsc}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="branch">
+    <th mat-header-cell *matHeaderCellDef class="matHeaderCell"> Branch </th>
+    <td mat-cell *matCellDef="let element"> {{element.branch}} </td>
+  </ng-container>
+  <!-- <ng-container matColumnDef="address">
+    <th mat-header-cell *matHeaderCellDef> Address </th>
+    <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+  </ng-container> -->
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<p *ngIf='!selectedCity' class="para">
+  Please Select a city!
+</p>
